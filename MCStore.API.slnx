@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="MCStore.API/MCStore.API.csproj" />
+  <Project Path="MCStore.Business/MCStore.Business.csproj" Id="5880d993-115a-4ac1-8405-a9443572d969" />
+  <Project Path="MCStore.DAL/MCStore.DAL.csproj" Id="60e1630b-fcde-40fd-a08e-f5dead89125a" />
+  <Project Path="MCStore.Domain/MCStore.Domain.csproj" Id="46234844-f69c-4ec0-b1f5-2e199e0885e9" />
+  <Project Path="MCStore.Middlewares/MCStore.Middlewares.csproj" Id="7aaed8d3-43c4-4eba-b21d-89c42cd6f6b6" />
+</Solution>
