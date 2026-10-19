@@ -9,7 +9,7 @@ namespace MCStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     public class StockController : ControllerBase
     {
         private readonly IStockService _stockService;

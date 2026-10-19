@@ -8,7 +8,7 @@ namespace MCStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     public class WalletBalanceController : ControllerBase
     {
         private readonly IWalletBalanceService _walletBalanceService;

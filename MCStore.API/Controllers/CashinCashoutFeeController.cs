@@ -9,7 +9,7 @@ namespace MCStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     public class CashinCashoutFeeController : ControllerBase
     {
         private readonly ICashInCashOutFeeService _cashInCashOutFeeService;

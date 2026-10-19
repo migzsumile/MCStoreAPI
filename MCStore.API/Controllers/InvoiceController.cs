@@ -8,7 +8,7 @@ namespace MCStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     public class InvoiceController : ControllerBase
     {
         private readonly IInvoiceService _invoiceService;
