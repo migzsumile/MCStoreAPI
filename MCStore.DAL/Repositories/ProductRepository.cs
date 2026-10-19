@@ -20,7 +20,7 @@ namespace MCStore.DAL.Repositories
 
         public async Task<List<Product>> GetAllProductsAsync()
         {
-            var a = await _context.Product.ToListAsync();
+            var a = await _context.Product.OrderBy(p => p.ProductName).ToListAsync();
             return a;
         }
 
@@ -50,6 +50,7 @@ namespace MCStore.DAL.Repositories
             {
                 var products = await _context.Product
                     .Where(x => x.ProductName.Contains(searchString) || x.ProductCode.Contains(searchString))
+                    .OrderBy(x => x.ProductName)
                     .ToListAsync();
 
                 return products;

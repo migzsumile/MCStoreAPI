@@ -22,6 +22,7 @@ namespace MCStore.DAL.Repositories
             var dateToday = DateTime.Today;
             var stocks = await _context.Stocks
                 .Where(x => x.Product != null && x.Product.ProductCode != null && x.ExpiryDate >= dateToday && x.UnitInStock > 0)
+                .OrderBy(x => x.Product.ProductName)
                 .Select(x => new StockDTO
                 {
                     Id = x.Id,
@@ -43,6 +44,7 @@ namespace MCStore.DAL.Repositories
             var dateToday = DateTime.Today;
             var stocks = await _context.Stocks
                 .Where(x => x.Product != null && x.Product.ProductCode != null && x.ExpiryDate < dateToday && x.UnitInStock > 0)
+                .OrderBy(x => x.Product.ProductName)
                 .Select(x => new StockDTO
                 {
                     Id = x.Id,
@@ -113,6 +115,7 @@ namespace MCStore.DAL.Repositories
             var stocks = await _context.Stocks.Where(x => x.Product != null && x.Product.ProductCode != null
                 && (EF.Functions.Like(x.Product.ProductCode, $"%{searchString}%") || EF.Functions.Like(x.Product.ProductName, $"%{searchString}%"))
                 && x.ExpiryDate >= dateToday && x.UnitInStock > 0)
+                .OrderBy(x => x.Product.ProductName)
                 .Select(x => new StockDTO
                 {
                     Id = x.Id,
